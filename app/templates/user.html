@@ -3,7 +3,7 @@
 
 {% block content %}
 {% include 'flash.html' %}
-<div class="well well-large" style="height: 200px;">
+<div class="well well-large" style="height: 300px;">
     <h1>{{ user.name + " "+ user.surname }}</h1>
     <h5>Email address: {{ user.email }}</h5>
         {% if user.id == g.user.id %}

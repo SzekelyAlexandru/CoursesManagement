@@ -8,6 +8,8 @@ class LoginForm(Form):
     password=PasswordField('password', validators=[DataRequired()])
     is_professor = BooleanField('is_professor', default=False)
     remember_me = BooleanField('remember_me', default=False)
+
+
 class RegisterForm(Form):
     name=StringField('name', validators=[DataRequired()])
     surname = StringField('surname', validators=[DataRequired()])
