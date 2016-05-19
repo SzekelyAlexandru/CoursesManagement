@@ -1,0 +1,29 @@
+<html>
+
+<body>
+{% extends "base.html" %}
+{% block content %}
+<h1>Hi, {{ g.user.name +" "+ g.user.surname }}!</h1>
+{% include 'flash.html' %}
+<div>
+    Welcome to our application page!
+</div>
+<div>
+    <br>Here are your courses:
+    <table class="table table-hover">
+    <th>
+        <tr>
+            <td>Name</td>
+            <td>Year</td>
+            <td>Semester</td>
+            <td></td>
+        </tr>
+    </th>
+    {% for subject in subjects.items %}
+        {% include 'subject_table_row.html' %}
+    {% endfor %}
+        </table>
+</div>
+{% endblock %}
+</body>
+</html>

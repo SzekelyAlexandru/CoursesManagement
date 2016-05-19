@@ -1,0 +1,32 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+<h1>New subject</h1>
+<form action="" method="post" name="newSubject">
+    {{ form.hidden_tag() }}
+    <p>
+        Subject name<br>
+        {{ form.name(size=80) }}<br>
+        {% for error in form.name.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}<br>
+
+        Year of teaching<br>
+        {{ form.year }}<br>
+        {% for error in form.year.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}<br>
+
+        Semester of teaching<br>
+        {{ form.semester }}<br>
+        {% for error in form.semester.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}<br>
+    </p>
+    <p><input type="submit"  value="Submit"></p>
+</form>
+{% endblock %}

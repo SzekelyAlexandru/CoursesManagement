@@ -1,0 +1,29 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    {% include 'flash.html' %}
+    <div class="well well-large" style="height: 140px;">
+        <div class="navbar">
+        <div class="navbar-inner">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">{{subject.name}}</a>
+            <ul class="nav">
+              <li><a href="{{ url_for('index') }}">Home</a></li>
+              {% if g.user.is_authenticated %}
+              <li><a href="{{ url_for('user', name=g.user.name, surname=g.user.surname) }}">Your Profile</a></li>
+               {% if g.user.id<1000 %}
+              <li><a href="{{ url_for('newSubject') }}">New subject</a></li>
+              {% endif %}
+              <li><a href="{{ url_for('logout') }}">Logout</a></li>
+              {% endif %}
+            </ul>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

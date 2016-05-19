@@ -1,0 +1,21 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+{% include 'flash.html' %}
+<div class="well well-large" style="height: 200px;">
+    <h1>{{ user.name + " "+ user.surname }}</h1>
+    <h5>Email address: {{ user.email }}</h5>
+        {% if user.id == g.user.id %}
+        <a href="{{url_for('edit')}}">Edit your profile</a><br><br>
+        {% endif %}
+        {% if user.id<1000%}
+        <strong>Currently teaching:</strong>
+        {% else %}
+        <h5>Year: {{user.year}}</h5>
+            <h5>Group: {{user.group}}</h5>
+            <h5>Profile: {{user.profile}}</h5>
+        <strong>Currently attending:</strong>
+        {%endif%}
+</div>
+{% endblock %}

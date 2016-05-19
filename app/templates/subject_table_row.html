@@ -1,0 +1,15 @@
+
+    <tr>
+        <td>
+            <p><strong><span id="subject{{ subject.subject_id }}">{{ subject.name }}</span></strong></p>
+        </td>
+        <td>
+            <p><strong>{{ subject.semester }}</strong></p>
+        </td>
+        <td>
+            <p><strong>{{ subject.year }}</strong></p>
+        </td>
+        <td>
+            <p><a href="{{ url_for('subject', subject_id=subject.subject_id) }}" class="btn btn-default">Open</a></p>
+        </td>
+    </tr>
